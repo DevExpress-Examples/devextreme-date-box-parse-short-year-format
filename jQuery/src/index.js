@@ -6,13 +6,13 @@ $(() => {
     label: 'Date with the short year',
     labelMode: 'outside',
     displayFormat: {
-      parser: val => parser(val),
-      formatter: val => formatter(val),
+      parser: (val) => parser(val),
+      formatter: (val) => formatter(val),
     },
     value: now,
   });
 
-  $("#grid").dxDataGrid({
+  $('#grid').dxDataGrid({
     width: 400,
     dataSource: employees,
     keyExpr: 'ID',
@@ -26,17 +26,17 @@ $(() => {
     },
     columns: [
       'FirstName',
-      'LastName',{
+      'LastName', {
         dataField: 'BirthDate',
         dataType: 'date',
         editorOptions: {
           displayFormat: {
-            parser: val => parser(val),
-            formatter: val => formatter(val),
+            parser: (val) => parser(val),
+            formatter: (val) => formatter(val),
           },
         },
         width: 125,
       },
     ],
-  })
+  });
 });
