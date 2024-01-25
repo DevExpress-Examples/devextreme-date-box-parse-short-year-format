@@ -32,7 +32,7 @@ import { ref } from 'vue';
 import 'devextreme/dist/css/dx.material.blue.light.compact.css';
 import DxDataGrid, { DxColumn, DxEditing } from 'devextreme-vue/data-grid';
 import DxDateBox from 'devextreme-vue/date-box';
-import { Employee, employees } from '@/data';
+import { type Employee, employees } from '@/data';
 import { formatter, parser } from '@/utils';
 
 const now = new Date();
