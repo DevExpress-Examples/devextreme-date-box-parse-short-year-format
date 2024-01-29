@@ -1,29 +1,51 @@
 @using ASP_NET_Core.Models
 
-<h2>Home</h2>
+<style>
+    #grid {
+        margin-top: 50px;
+    }
+</style>
 
-@(Html.DevExtreme().DataGrid<SampleOrder>()
+@(Html.DevExtreme().DateBox()
+    .Value(DateTime.Now)
+    .DisplayFormat(new JS("displayFormat"))
+    .Type(DateBoxType.Date)
+    .Label("Date with the short year")
+
+)
+
+@(Html.DevExtreme().DataGrid<Employee>()
+    .ID("grid")
     .ShowBorders(true)
-    .DataSource(d => d.Mvc().Controller("SampleData").LoadAction("Get").Key("OrderID"))
+    .DataSource(d => d.Mvc().Controller("SampleData").LoadAction("Get").Key("ID").UpdateAction("Put"))
     .Columns(columns => {
-        columns.AddFor(m => m.OrderID);
-        columns.AddFor(m => m.OrderDate);
-        columns.AddFor(m => m.CustomerName);
-        columns.AddFor(m => m.ShipCountry);
-        columns.AddFor(m => m.ShipCity);
+        columns.AddFor(m => m.FirstName);
+        columns.AddFor(m => m.LastName);
+        columns.AddFor(m => m.BirthDate).EditorOptions(new {displayFormat = new JS("displayFormat")});
     })
     .Paging(p => p.PageSize(10))
-    .FilterRow(f => f.Visible(true))
-    .HeaderFilter(f => f.Visible(true))
-    .GroupPanel(p => p.Visible(true))
-    .Grouping(g => g.AutoExpandAll(false))
+    .Editing(e =>
+    {
+        e.AllowUpdating(true);
+        e.Mode(GridEditMode.Cell);
+    })
     .RemoteOperations(true)
-    .Summary(s => s
-        .TotalItems(totalItems => {
-            totalItems.AddFor(m => m.ShipCity).SummaryType(SummaryType.Count);
-        })
-        .GroupItems(groupItems => {
-            groupItems.Add().SummaryType(SummaryType.Count);
-        })
-    )
+  
 )
+
+<script>
+    const parser = (value) => {
+        const parts = value.split('/');
+        if (parts.length !== 3) return value;
+        let year = Number(parts[2]);
+        if (year < 100) year += 2000;
+        return new Date(year, Number(parts[0]) - 1, Number(parts[1]));
+    };
+
+    const formatter = (value) => value.toLocaleDateString();
+
+    const displayFormat = {
+        parser: (val) => parser(val),
+        formatter: (val) => formatter(val),
+    };
+</script>

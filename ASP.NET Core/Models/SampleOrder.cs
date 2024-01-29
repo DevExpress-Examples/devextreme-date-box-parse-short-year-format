@@ -5,12 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ASP_NET_Core.Models {
-    public class SampleOrder {
-        public int OrderID { get; set; }
-        public DateTime OrderDate { get; set; }
-        public string CustomerID { get; set; }
-        public string CustomerName { get; set; }
-        public string ShipCountry { get; set; }
-        public string ShipCity { get; set; }
+    public class Employee {
+        public int ID { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public DateTime BirthDate { get; set; }
     }
 }
