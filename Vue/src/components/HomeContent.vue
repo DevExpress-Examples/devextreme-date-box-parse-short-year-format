@@ -20,7 +20,7 @@
       <DxColumn data-field="FirstName"/>
       <DxColumn data-field="LastName"/>
       <DxColumn
-        data-field="BirthDate"
+        data-field="HireDate"
         data-type="date"
         :editor-options="editorOptions"
       />

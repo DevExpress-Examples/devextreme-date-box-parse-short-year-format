@@ -27,7 +27,7 @@ $(() => {
     columns: [
       'FirstName',
       'LastName', {
-        dataField: 'BirthDate',
+        dataField: 'HireDate',
         dataType: 'date',
         editorOptions: {
           displayFormat: {

@@ -23,7 +23,7 @@ export const employees: Employee[] = [{
   Prefix: 'Mr.',
   Position: 'CEO',
   BirthDate: '1964/03/16',
-  HireDate: '1995/01/15',
+  HireDate: '2011/01/15',
   Address: '351 S Hill St.',
 }, {
   ID: 2,

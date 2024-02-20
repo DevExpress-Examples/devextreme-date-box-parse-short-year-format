@@ -11,13 +11,13 @@ namespace ASP_NET_Core.Models {
                 ID = 1,
                 FirstName = "John",
                 LastName = "Heart",
-                BirthDate = new DateTime(1964, 3, 4),
+                HireDate = new DateTime(2011, 3, 4),
             },
             new Employee {
                 ID = 2,
                 FirstName = "Olivia",
                 LastName = "Peyton",
-                BirthDate = new DateTime(1979, 9, 7),
+                HireDate = new DateTime(2022, 9, 7),
             }
         };
     }
