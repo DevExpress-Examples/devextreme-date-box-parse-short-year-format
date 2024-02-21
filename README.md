@@ -3,17 +3,13 @@
 [![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/T1211517)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
-# DevExtreme Examples Template
+# DateBox for DevExtreme - How to parse and update short year input
 
-This is the repository template for creating new examples. 
+The DateBox component interprets one- and two-digit year inputs (for example, "15") as 1915 instead of 2015. This example shows how to customize this functionality and display 2000s dates instead in DateBox - standalone and in DataGrid.
 
-Use **_Product_ for DevExtreme - _Task_** template for a title. 
+![DateBox - standalone and in DataGrid - with parsed short dates](/date-box-parse-short-year-format.gif)
 
-Describe the solved task in this section.
-
-Put a screenshot/gif that illustrates the result here.
-
-Then, add implementation details (steps, code snippets, and other technical information in a free form), or add a link to an existing document with implementation details. 
+Use the [displayFormat](https://js.devexpress.com/Documentation/ApiReference/UI_Components/dxDateBox/Configuration/#displayFormat) property and implement custom parser and formatter functions. The parser function analyzes the input date, identifies two-digit year entries, and accordingly transforms them into their 2000s counterparts (for example, "15" becomes 2015).
 
 ## Files to Review
 
@@ -31,12 +27,10 @@ Then, add implementation details (steps, code snippets, and other technical info
 
 ## Documentation
 
-- link
-- link
-- ...
+- [Getting Started with DateBox](https://js.devexpress.com/Documentation/Guide/UI_Components/DateBox/Getting_Started_with_DateBox/)
+- [DateBox - displayFormat](https://js.devexpress.com/Documentation/ApiReference/UI_Components/dxDateBox/Configuration/#displayFormat)
+- [DataGrid - columns.editorOptions](https://js.devexpress.com/Documentation/ApiReference/UI_Components/dxDataGrid/Configuration/columns/#editorOptions)
 
 ## More Examples
 
-- link
-- link
-- ...
+- [DateBox Formatting demo](https://js.devexpress.com/Demos/WidgetsGallery/Demo/DateBox/Formatting/)
