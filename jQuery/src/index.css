@@ -3,6 +3,6 @@
     width: 90vh;
 }
 
-#grid {
-    margin-top: 50px;
+#parseBehavior, #date {
+    margin-bottom: 50px;
 }

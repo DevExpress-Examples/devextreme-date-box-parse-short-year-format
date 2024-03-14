@@ -1,6 +1,14 @@
 $(() => {
   const now = new Date();
 
+  const parseSelectBox = $('#parseBehavior').dxSelectBox({
+    width: 300,
+    items,
+    displayExpr: 'text',
+    valueExpr: 'value',
+    value: 'javascript',
+  }).dxSelectBox('instance');
+
   $('#date').dxDateBox({
     type: 'date',
     label: 'Date with the short year',

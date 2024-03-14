@@ -21,3 +21,21 @@ const employees = [{
   Address: '807 W Paseo Del Mar',
   StateID: 5,
 }];
+
+const items = [
+  {
+    text: 'Century cuts off at 50 years',
+    value: 'javascript',
+  },
+  {
+    text: 'Century cuts off after current decade',
+    value: 'excel',
+  },
+  {
+    text: 'Century cuts off at current year',
+    value: 'past',
+  },
+  {
+    text: 'No century cut-off',
+    value: 'nocutoff',
+  }];
