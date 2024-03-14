@@ -1,5 +1,5 @@
 function parser(value) {
-  const parseSelectBox = $('#parseBehavior').dxSelectBox('instance');
+  const parseSelectBox = $('#parse-behavior').dxSelectBox('instance');
 
   const algorithm = parseSelectBox.option('value');
   const resultDate = new Date(value);

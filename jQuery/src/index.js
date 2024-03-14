@@ -1,7 +1,7 @@
 $(() => {
   const now = new Date();
 
-  const parseSelectBox = $('#parseBehavior').dxSelectBox({
+  const parseSelectBox = $('#parse-behavior').dxSelectBox({
     width: 300,
     items,
     displayExpr: 'text',
