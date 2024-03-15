@@ -14,7 +14,7 @@ $(() => {
     label: 'Date with the short year',
     labelMode: 'outside',
     displayFormat: {
-      parser: (val) => parser(val),
+      parser: (val) => parser(val, parseSelectBox.option('value')),
       formatter: (val) => formatter(val),
     },
     value: now,
@@ -39,7 +39,7 @@ $(() => {
         dataType: 'date',
         editorOptions: {
           displayFormat: {
-            parser: (val) => parser(val),
+            parser: (val) => parser(val, parseSelectBox.option('value')),
             formatter: (val) => formatter(val),
           },
         },
