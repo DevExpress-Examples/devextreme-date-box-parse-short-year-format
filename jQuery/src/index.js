@@ -1,12 +1,20 @@
 $(() => {
   const now = new Date();
 
+  const parseSelectBox = $('#parse-behavior').dxSelectBox({
+    width: 300,
+    items,
+    displayExpr: 'text',
+    valueExpr: 'value',
+    value: 'javascript',
+  }).dxSelectBox('instance');
+
   $('#date').dxDateBox({
     type: 'date',
     label: 'Date with the short year',
     labelMode: 'outside',
     displayFormat: {
-      parser: (val) => parser(val),
+      parser: (val) => parser(val, parseSelectBox.option('value')),
       formatter: (val) => formatter(val),
     },
     value: now,
@@ -27,11 +35,11 @@ $(() => {
     columns: [
       'FirstName',
       'LastName', {
-        dataField: 'BirthDate',
+        dataField: 'HireDate',
         dataType: 'date',
         editorOptions: {
           displayFormat: {
-            parser: (val) => parser(val),
+            parser: (val) => parser(val, parseSelectBox.option('value')),
             formatter: (val) => formatter(val),
           },
         },

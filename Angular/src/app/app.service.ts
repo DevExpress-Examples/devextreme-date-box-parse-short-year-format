@@ -18,6 +18,10 @@ export interface Employee {
   Address: string;
 }
 
+export interface Item {
+  Value: string;
+  Text: string;
+}
 const employees: Employee[] = [{
   ID: 1,
   FirstName: 'John',
@@ -25,7 +29,7 @@ const employees: Employee[] = [{
   Prefix: 'Mr.',
   Position: 'CEO',
   BirthDate: '1964/03/16',
-  HireDate: '1995/01/15',
+  HireDate: '2011/01/15',
   Address: '351 S Hill St.',
 }, {
   ID: 2,
@@ -38,9 +42,31 @@ const employees: Employee[] = [{
   Address: '807 W Paseo Del Mar',
 }];
 
+const items: Item[] = [
+  {
+    Text: 'Century cuts off at 50 years (JavaScript)',
+    Value: 'javascript',
+  },
+  {
+    Text: 'Century cuts off after current decade (Excel)',
+    Value: 'excel',
+  },
+  {
+    Text: 'Century cuts off at current year',
+    Value: 'past',
+  },
+  {
+    Text: 'No century cut-off',
+    Value: 'nocutoff',
+  }];
+
 @Injectable()
 export class Service {
   getEmployees(): Employee[] {
     return employees;
+  }
+
+  getItems(): Item[] {
+    return items;
   }
 }

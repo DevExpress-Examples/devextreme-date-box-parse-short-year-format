@@ -1,19 +1,19 @@
 export interface Employee {
-  ID: number;
+    ID: number;
 
-  FirstName: string;
+    FirstName: string;
 
-  LastName: string;
+    LastName: string;
 
-  Prefix: string;
+    Prefix: string;
 
-  Position: string;
+    Position: string;
 
-  BirthDate: string;
+    BirthDate: string;
 
-  HireDate: string;
+    HireDate: string;
 
-  Address: string;
+    Address: string;
 }
 
 export const employees: Employee[] = [{

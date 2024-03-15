@@ -40,7 +40,7 @@ function App(): JSX.Element {
         <Editing mode="cell" allowUpdating={true} />
         <Column dataField='FirstName' />
         <Column dataField="LastName" />
-        <Column dataField='BirthDate' dataType='date' editorOptions={editorOptions} />
+        <Column dataField='HireDate' dataType='date' editorOptions={editorOptions} />
       </DataGrid>
     </div>
   );
