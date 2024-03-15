@@ -30,6 +30,7 @@ function App(): JSX.Element {
       />
       <DateBox
         value={now}
+        id="date"
         type="date"
         label="Date with the short year"
         displayFormat={format}
