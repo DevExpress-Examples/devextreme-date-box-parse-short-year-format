@@ -11,4 +11,9 @@ namespace ASP_NET_Core.Models {
         public string LastName { get; set; }
         public DateTime BirthDate { get; set; }
     }
+    public class Item
+    {
+        public string Value { get; set; }
+        public string Text { get; set; }
+    }
 }
