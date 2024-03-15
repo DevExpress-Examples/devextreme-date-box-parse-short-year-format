@@ -1,7 +1,7 @@
 @using ASP_NET_Core
 
 <style>
-    #grid {
+    #grid, #date {
         margin-top: 50px;
     }
 </style>
@@ -21,6 +21,7 @@
 
 @(Html.DevExtreme().DateBox()
     .Value(DateTime.Now)
+    .ID("date")
     .DisplayFormat(new JS("displayFormat"))
     .Type(DateBoxType.Date)
     .Label("Date with the short year")
