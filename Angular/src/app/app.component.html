@@ -1,7 +1,17 @@
+<dx-select-box
+  id="parse-behavior"
+  [items]="items"
+  [width]="300"
+  displayExpr="Text"
+  valueExpr="Value"
+  [(value)]="selectBoxValue"
+>
+</dx-select-box>
 <dx-date-box
+  id="date"
   [value]="now"
   type="date"
-  [width]="400"
+  [width]="300"
   label="Date with the short year"
   [displayFormat]="format"
 >
