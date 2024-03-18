@@ -11,19 +11,19 @@ import 'devextreme/dist/css/dx.material.blue.light.compact.css';
 const now = new Date();
 
 function App(): JSX.Element {
-  const [value, setValue] = useState('javascript');
+  const [selectedAlgorithm, setSelectedAlgorithm] = useState('javascript');
   const format: Format = useMemo(() => ({
-    parser: (val) => parser(val, value),
+    parser: (val) => parser(val, selectedAlgorithm),
     formatter: (val) => formatter(val),
-  }), [value]);
+  }), [selectedAlgorithm]);
 
   const editorOptions = useMemo(() => format, []);
 
   return (
     <div className="main">
       <SelectBox
-        value={value}
-        onValueChange={setValue}
+        value={selectedAlgorithm}
+        onValueChange={setSelectedAlgorithm}
         items={items}
         displayExpr="Text"
         valueExpr="Value"
