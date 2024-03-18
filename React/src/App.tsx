@@ -1,31 +1,36 @@
-import React from 'react';
+import React, { useMemo, useState } from 'react';
 import DataGrid, { Column, Editing } from 'devextreme-react/data-grid';
 import DateBox from 'devextreme-react/date-box';
+import SelectBox from 'devextreme-react/select-box';
 import { Format } from 'devextreme/localization';
-import { employees } from './data';
+import { employees, items } from './data';
 import { formatter, parser } from './utils';
 import './App.css';
 import 'devextreme/dist/css/dx.material.blue.light.compact.css';
 
 const now = new Date();
 
-const format: Format = {
-  parser: (val) => parser(val),
-  formatter: (val) => formatter(val),
-};
-
-const editorOptions: { displayFormat: Format } = {
-  displayFormat: {
-    parser: (val) => parser(val),
-    formatter: (val) => formatter(val),
-  },
-};
-
 function App(): JSX.Element {
+  const [selectedAlgorithm, setSelectedAlgorithm] = useState('javascript');
+  const format: Format = useMemo(() => ({
+    parser: (val) => parser(val, selectedAlgorithm),
+    formatter: (val) => formatter(val),
+  }), [selectedAlgorithm]);
+
+  const editorOptions = useMemo(() => format, []);
+
   return (
     <div className="main">
+      <SelectBox
+        value={selectedAlgorithm}
+        onValueChange={setSelectedAlgorithm}
+        items={items}
+        displayExpr="Text"
+        valueExpr="Value"
+      />
       <DateBox
         value={now}
+        id="date"
         type="date"
         label="Date with the short year"
         displayFormat={format}
