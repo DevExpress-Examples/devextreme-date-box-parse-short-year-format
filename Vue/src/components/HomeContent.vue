@@ -1,7 +1,7 @@
 <template>
   <div class="main">
     <DxSelectBox
-      v-model:value="value"
+      v-model:value="selectedAlgorithm"
       value-expr="Value"
       display-expr="Text"
       :items="itemsData"
@@ -46,13 +46,13 @@ import { type Employee, type Item, items, employees } from '@/data';
 import { formatter, parser } from '@/utils';
 
 const now = new Date();
-const value = ref('javascript');
+const selectedAlgorithm = ref('javascript');
 
 const employeesData = ref<Employee[]>(employees);
 const itemsData = ref<Item[]>(items);
 
 const format = {
-  parser: (val: string) => parser(val, value.value),
+  parser: (val: string) => parser(val, selectedAlgorithm.value),
   formatter: (val: Date) => formatter(val),
 };
 
