@@ -11,11 +11,18 @@ using Newtonsoft.Json;
 
 namespace ASP_NET_Core.Controllers {
 
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     public class SampleDataController : Controller {
 
         [HttpGet]
+        public object GetSelectBoxItems(DataSourceLoadOptions loadOptions)
+        {
+            return DataSourceLoader.Load(SampleData.Items, loadOptions);
+        }
+
+        [HttpGet]
         public object Get(DataSourceLoadOptions loadOptions) {
+
             return DataSourceLoader.Load(SampleData.Employees, loadOptions);
         }
 
