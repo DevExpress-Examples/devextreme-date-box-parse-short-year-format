@@ -1,6 +1,15 @@
 <template>
   <div class="main">
+    <DxSelectBox
+      v-model:value="selectedAlgorithm"
+      value-expr="Value"
+      display-expr="Text"
+      :items="itemsData"
+      :width="300"
+    />
     <DxDateBox
+      :width="300"
+      id="date"
       v-model="now"
       type="date"
       label="Date with the short year"
@@ -32,14 +41,18 @@ import { ref } from 'vue';
 import 'devextreme/dist/css/dx.material.blue.light.compact.css';
 import DxDataGrid, { DxColumn, DxEditing } from 'devextreme-vue/data-grid';
 import DxDateBox from 'devextreme-vue/date-box';
-import { type Employee, employees } from '@/data';
+import DxSelectBox from 'devextreme-vue/select-box';
+import { type Employee, type Item, items, employees } from '@/data';
 import { formatter, parser } from '@/utils';
 
 const now = new Date();
+const selectedAlgorithm = ref('javascript');
+
 const employeesData = ref<Employee[]>(employees);
+const itemsData = ref<Item[]>(items);
 
 const format = {
-  parser: (val: string) => parser(val),
+  parser: (val: string) => parser(val, selectedAlgorithm.value),
   formatter: (val: Date) => formatter(val),
 };
 
@@ -49,7 +62,7 @@ const editorOptions = {
 
 </script>
 <style scoped>
-#grid {
+#grid, #date {
   margin-top: 50px;
 }
 

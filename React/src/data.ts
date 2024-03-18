@@ -16,6 +16,11 @@ export interface Employee {
   Address: string;
 }
 
+export interface Item {
+  Value: string;
+  Text: string;
+}
+
 export const employees: Employee[] = [{
   ID: 1,
   FirstName: 'John',
@@ -36,3 +41,20 @@ export const employees: Employee[] = [{
   Address: '807 W Paseo Del Mar',
 }];
 
+export const items: Item[] = [
+  {
+    Text: 'Century cuts off at 50 years (JavaScript)',
+    Value: 'javascript',
+  },
+  {
+    Text: 'Century cuts off after current decade (Excel)',
+    Value: 'excel',
+  },
+  {
+    Text: 'Century cuts off at current year',
+    Value: 'past',
+  },
+  {
+    Text: 'No century cut-off',
+    Value: 'nocutoff',
+  }];
