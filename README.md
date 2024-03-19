@@ -4,19 +4,21 @@
 <!-- default badges end -->
 # DateBox for DevExtreme - How to parse and update short year input
 
-The DateBox component interprets one- and two-digit year inputs (for example, "15") as 1915. This example shows how to customize this functionality and display 2000s dates instead in DateBox - standalone and in DataGrid.
+The DateBox component interprets one- and two-digit year inputs as years in the 20th century (for example, "15" becomes "1915"). This is how the JavaScript `Date()` constructor processes input if you pass numeric arguments. 
+
+This example shows how to customize this functionality and specify the century part according to your application's use cases. 
 
 ![DateBox - standalone and in DataGrid - with parsed short dates](/date-box-parse-short-year-format.gif)
 
-Use the [displayFormat](https://js.devexpress.com/Documentation/ApiReference/UI_Components/dxDateBox/Configuration/#displayFormat) property and implement custom parser and formatter functions. The parser function analyzes the input date, identifies two-digit year entries, and accordingly transforms them into their 2000s counterparts.
+Use the [displayFormat](https://js.devexpress.com/Documentation/ApiReference/UI_Components/dxDateBox/Configuration/#displayFormat) property and implement custom parser and formatter functions. The parser function analyzes the input date, identifies two-digit year entries, and transforms them into dates in the current or previous century, depending on a specific algorithm.
 
-In the example, you will find a SelectBox with 4 options for the parser function:
+In this sample project, you will find a SelectBox with 4 options for the parser function. (Output of some algorithms depends on the current year. Examples in the table below are for the year 2024.)
 
 | Option | Cut-off range |
 |:------:|:-------------:|
 | Century cuts off at 50 years | 2049/1950 |
-| Century cuts off after current decade | 2029/1930 |
-| Century cuts off at current year | 2024/1925 |
+| Century cuts off after the current decade | 2029/1930 |
+| Century cuts off at the current year | 2024/1925 |
 | No century cut-off | Always 2000s |
 
 ## Files to Review
