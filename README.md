@@ -4,7 +4,7 @@
 <!-- default badges end -->
 # DateBox for DevExtreme - How to parse and update short year input
 
-The DateBox component interprets one- and two-digit year inputs (for example, "15") as 1915 instead of 2015. This example shows how to customize this functionality and display 2000s dates instead in DateBox - standalone and in DataGrid.
+The DateBox component interprets one- and two-digit year inputs (for example, "15") as 1915. This example shows how to customize this functionality and display 2000s dates instead in DateBox - standalone and in DataGrid.
 
 ![DateBox - standalone and in DataGrid - with parsed short dates](/date-box-parse-short-year-format.gif)
 
