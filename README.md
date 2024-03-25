@@ -1,19 +1,25 @@
 <!-- default badges list -->
-![](https://img.shields.io/endpoint?url=https://codecentral.devexpress.com/api/v1/VersionRange/744047123/23.2.3%2B)
 [![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/T1211517)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
-# DevExtreme Examples Template
+# DateBox for DevExtreme - How to Parse and Update Short Year Input
 
-This is the repository template for creating new examples. 
+The DevExtreme DateBox component interprets one/two-digit year values as years in the 20th century (for example, "15" is interpreted as "1915"). This is how the JavaScript `Date()` constructor processes input when you pass numeric arguments.
 
-Use **_Product_ for DevExtreme - _Task_** template for a title. 
+This example customizes default functionality and allows you to specify the century portion of a given date value.  
 
-Describe the solved task in this section.
+![DateBox - standalone and in DataGrid - with parsed short dates](/date-box-parse-short-year-format.gif)
 
-Put a screenshot/gif that illustrates the result here.
+Use the [displayFormat](https://js.devexpress.com/Documentation/ApiReference/UI_Components/dxDateBox/Configuration/#displayFormat) property and implement custom parser and formatter functions. The parser function analyzes input date value, identifies two-digit year entries, and transforms them into dates in the current/previous century (based on a specific algorithm).
 
-Then, add implementation details (steps, code snippets, and other technical information in a free form), or add a link to an existing document with implementation details. 
+In this sample project, you will find a SelectBox with 4 options for the parser function. (Output for certain algorithms depends on the current year. Examples in the table below are for 2024.)
+
+| Option | Cut-off range |
+|:------:|:-------------:|
+| Century cuts off at 50 years | 2049/1950 |
+| Century cuts off after the current decade | 2029/1930 |
+| Century cuts off at the current year | 2024/1925 |
+| No century cut-off | Always 2000s |
 
 ## Files to Review
 
@@ -31,12 +37,10 @@ Then, add implementation details (steps, code snippets, and other technical info
 
 ## Documentation
 
-- link
-- link
-- ...
+- [Getting Started with DateBox](https://js.devexpress.com/Documentation/Guide/UI_Components/DateBox/Getting_Started_with_DateBox/)
+- [DateBox - displayFormat](https://js.devexpress.com/Documentation/ApiReference/UI_Components/dxDateBox/Configuration/#displayFormat)
+- [DataGrid - columns.editorOptions](https://js.devexpress.com/Documentation/ApiReference/UI_Components/dxDataGrid/Configuration/columns/#editorOptions)
 
 ## More Examples
 
-- link
-- link
-- ...
+- [DateBox Formatting demo](https://js.devexpress.com/Demos/WidgetsGallery/Demo/DateBox/Formatting/)
