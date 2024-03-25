@@ -2,17 +2,17 @@
 [![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/T1211517)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
-# DateBox for DevExtreme - How to parse and update short year input
+# DateBox for DevExtreme - How to Parse and Update Short Year Input
 
-The DateBox component interprets one- and two-digit year inputs as years in the 20th century (for example, "15" becomes "1915"). This is how the JavaScript `Date()` constructor processes input if you pass numeric arguments. 
+The DevExtreme DateBox component interprets one/two-digit year values as years in the 20th century (for example, "15" is interpreted as "1915"). This is how the JavaScript `Date()` constructor processes input when you pass numeric arguments.
 
-This example shows how to customize this functionality and specify the century part according to your application's use cases. 
+This example customizes default functionality and allows you to specify the century portion of a given date value.  
 
 ![DateBox - standalone and in DataGrid - with parsed short dates](/date-box-parse-short-year-format.gif)
 
-Use the [displayFormat](https://js.devexpress.com/Documentation/ApiReference/UI_Components/dxDateBox/Configuration/#displayFormat) property and implement custom parser and formatter functions. The parser function analyzes the input date, identifies two-digit year entries, and transforms them into dates in the current or previous century, depending on a specific algorithm.
+Use the [displayFormat](https://js.devexpress.com/Documentation/ApiReference/UI_Components/dxDateBox/Configuration/#displayFormat) property and implement custom parser and formatter functions. The parser function analyzes input date value, identifies two-digit year entries, and transforms them into dates in the current/previous century (based on a specific algorithm).
 
-In this sample project, you will find a SelectBox with 4 options for the parser function. (Output of some algorithms depends on the current year. Examples in the table below are for the year 2024.)
+In this sample project, you will find a SelectBox with 4 options for the parser function. (Output for certain algorithms depends on the current year. Examples in the table below are for 2024.)
 
 | Option | Cut-off range |
 |:------:|:-------------:|
