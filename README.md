@@ -10,7 +10,7 @@ The DevExtreme DateBox component interprets one/two-digit year values as years i
 
 This example customizes default functionality and allows you to specify the century portion of a given date value.  
 
-![DateBox - standalone and in DataGrid - with parsed short dates](/date-box-parse-short-year-format.gif)
+![DateBox - standalone and in DataGrid - with parsed short dates](/images/date-box-parse-short-year-format.gif)
 
 Use the [displayFormat](https://js.devexpress.com/Documentation/ApiReference/UI_Components/dxDateBox/Configuration/#displayFormat) property and implement custom parser and formatter functions. The parser function analyzes input date value, identifies two-digit year entries, and transforms them into dates in the current/previous century (based on a specific algorithm).
 
