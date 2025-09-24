@@ -15,6 +15,7 @@ function getFourDigitYear(twoDigitYear: number, algorithm: string): number {
 
   return fullYear;
 }
+
 export function parser(value: string, algorithm: string): Date | number {
   const resultDate = new Date(value);
 
@@ -30,6 +31,7 @@ export function parser(value: string, algorithm: string): Date | number {
   }
   return resultDate;
 }
+
 export function formatter(value: number | Date): string {
   return typeof value !== 'number' ? value.toLocaleDateString() : '';
 }
