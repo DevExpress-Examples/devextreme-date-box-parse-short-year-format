@@ -2,19 +2,12 @@ import { Injectable } from '@angular/core';
 
 export interface Employee {
   ID: number;
-
   FirstName: string;
-
   LastName: string;
-
   Prefix: string;
-
   Position: string;
-
   BirthDate: string;
-
   HireDate: string;
-
   Address: string;
 }
 
@@ -22,6 +15,7 @@ export interface Item {
   Value: string;
   Text: string;
 }
+
 const employees: Employee[] = [{
   ID: 1,
   FirstName: 'John',
