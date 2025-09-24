@@ -1,45 +1,86 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System;using System;
 
-namespace ASP_NET_Core.Models;
-static class SampleData {
-    public static List<SampleOrder> Orders = [
-        new SampleOrder {
-            OrderID = 10248,
-            OrderDate = new DateTime(1996, 7, 4),
-            ShipCountry = "France",
-            ShipCity = "Reims",
-            CustomerName = "Paul Henriot"
-        },
-        new SampleOrder {
-            OrderID = 10249,
-            OrderDate = new DateTime(1996, 7, 5),
-            ShipCountry = "Germany",
-            ShipCity = "Münster",
-            CustomerName = "Karin Josephs"
-        },
-        new SampleOrder {
-            OrderID = 10250,
-            OrderDate = new DateTime(1996, 7, 8),
-            ShipCountry = "Brazil",
-            ShipCity = "Rio de Janeiro",
-            CustomerName = "Mario Pontes"
-        },
-        new SampleOrder {
-            OrderID = 10251,
-            OrderDate = new DateTime(1996, 7, 8),
-            ShipCountry = "France",
-            ShipCity = "Lyon",
-            CustomerName = "Mary Saveley"
-        },
-        new SampleOrder {
-            OrderID = 10252,
-            OrderDate = new DateTime(1996, 7, 9),
-            ShipCountry = "Belgium",
-            ShipCity = "Charleroi",
+using System.Collections.Generic;using System.Collections.Generic;
+
+using System.Linq;
+
+namespace ASP_NET_Core.Models {using System.Text;
+
+    static class SampleData {using System.Threading.Tasks;
+
+        public static List<Employee> Employees = new List<Employee>() {
+
+            new Employee {namespace ASP_NET_Core.Models;
+
+                ID = 1,static class SampleData {
+
+                FirstName = "John",    public static List<SampleOrder> Orders = [
+
+                LastName = "Heart",        new SampleOrder {
+
+                HireDate = new DateTime(2011, 1, 15),            OrderID = 10248,
+
+                Address = "351 S Hill St.",            OrderDate = new DateTime(1996, 7, 4),
+
+            },            ShipCountry = "France",
+
+            new Employee {            ShipCity = "Reims",
+
+                ID = 2,            CustomerName = "Paul Henriot"
+
+                FirstName = "Olivia",        },
+
+                LastName = "Peyton",        new SampleOrder {
+
+                HireDate = new DateTime(2012, 5, 14),            OrderID = 10249,
+
+                Address = "807 W Paseo Del Mar",            OrderDate = new DateTime(1996, 7, 5),
+
+            }            ShipCountry = "Germany",
+
+        };            ShipCity = "Münster",
+
+                    CustomerName = "Karin Josephs"
+
+        public static List<Item> Items = new List<Item>() {        },
+
+            new Item {        new SampleOrder {
+
+                Text = "Century cuts off at 50 years (JavaScript)",            OrderID = 10250,
+
+                Value = "javascript",            OrderDate = new DateTime(1996, 7, 8),
+
+            },            ShipCountry = "Brazil",
+
+            new Item {            ShipCity = "Rio de Janeiro",
+
+                Text = "Century cuts off after current decade (Excel)",            CustomerName = "Mario Pontes"
+
+                Value = "excel",        },
+
+            },        new SampleOrder {
+
+            new Item {            OrderID = 10251,
+
+                Text = "Century cuts off at current year",            OrderDate = new DateTime(1996, 7, 8),
+
+                Value = "past",            ShipCountry = "France",
+
+            },            ShipCity = "Lyon",
+
+            new Item {            CustomerName = "Mary Saveley"
+
+                Text = "No century cut-off",        },
+
+                Value = "nocutoff",        new SampleOrder {
+
+            },            OrderID = 10252,
+
+        };            OrderDate = new DateTime(1996, 7, 9),
+
+    }            ShipCountry = "Belgium",
+
+}            ShipCity = "Charleroi",
             CustomerName = "Pascale Cartrain"
         },
         new SampleOrder {
