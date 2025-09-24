@@ -1,18 +1,11 @@
 export interface Employee {
   ID: number;
-
   FirstName: string;
-
   LastName: string;
-
   Prefix: string;
-
   Position: string;
-
   BirthDate: string;
-
   HireDate: string;
-
   Address: string;
 }
 
