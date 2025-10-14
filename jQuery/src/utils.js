@@ -1,19 +1,3 @@
-function parser(value, algorithm) {
-  const resultDate = new Date(value);
-
-  if (algorithm === 'javascript') { return resultDate; }
-
-  const parts = value.split('/');
-  if (parts.length !== 3) { return value; }
-
-  let year = Number(parts[2]);
-  if (year < 100) {
-    year = getFourDigitYear(year, algorithm);
-    resultDate.setFullYear(year);
-  }
-  return resultDate;
-}
-
 function getFourDigitYear(twoDigitYear, algorithm) {
   const now = new Date();
   const yearToday = now.getFullYear();
@@ -31,4 +15,21 @@ function getFourDigitYear(twoDigitYear, algorithm) {
 
   return fullYear;
 }
+
+function parser(value, algorithm) {
+  const resultDate = new Date(value);
+
+  if (algorithm === 'javascript') { return resultDate; }
+
+  const parts = value.split('/');
+  if (parts.length !== 3) { return value; }
+
+  let year = Number(parts[2]);
+  if (year < 100) {
+    year = getFourDigitYear(year, algorithm);
+    resultDate.setFullYear(year);
+  }
+  return resultDate;
+}
+
 const formatter = (value) => value.toLocaleDateString();

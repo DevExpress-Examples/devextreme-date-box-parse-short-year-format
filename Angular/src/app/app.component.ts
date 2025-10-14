@@ -1,20 +1,34 @@
 import { Component } from '@angular/core';
-import { ClickEvent } from 'devextreme/ui/button';
+import type { Format } from 'devextreme/localization';
+import { formatter, parser } from '../utils';
+import { Employee, Item, Service } from './app.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
+  providers: [Service],
 })
 export class AppComponent {
-  title = 'Angular';
+  employees: Employee[];
 
-  counter = 0;
+  items: Item[];
 
-  buttonText = 'Click count: 0';
+  selectBoxValue = 'javascript';
 
-  onClick(e: ClickEvent): void {
-    this.counter++;
-    this.buttonText = `Click count: ${this.counter}`;
+  now: Date = new Date();
+
+  format: Format = {
+    parser: (val: string) => parser(val, this.selectBoxValue),
+    formatter: (val: number | Date) => formatter(val),
+  };
+
+  editorOptions = {
+    displayFormat: this.format,
+  };
+
+  constructor(service: Service) {
+    this.employees = service.getEmployees();
+    this.items = service.getItems();
   }
 }

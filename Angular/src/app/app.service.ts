@@ -1,26 +1,22 @@
+import { Injectable } from '@angular/core';
+
 export interface Employee {
-    ID: number;
-
-    FirstName: string;
-
-    LastName: string;
-
-    Prefix: string;
-
-    Position: string;
-
-    BirthDate: string;
-
-    HireDate: string;
-
-    Address: string;
+  ID: number;
+  FirstName: string;
+  LastName: string;
+  Prefix: string;
+  Position: string;
+  BirthDate: string;
+  HireDate: string;
+  Address: string;
 }
 
 export interface Item {
-    Value: string;
-    Text: string;
+  Value: string;
+  Text: string;
 }
-export const employees: Employee[] = [{
+
+const employees: Employee[] = [{
   ID: 1,
   FirstName: 'John',
   LastName: 'Heart',
@@ -40,7 +36,7 @@ export const employees: Employee[] = [{
   Address: '807 W Paseo Del Mar',
 }];
 
-export const items: Item[] = [
+const items: Item[] = [
   {
     Text: 'Century cuts off at 50 years (JavaScript)',
     Value: 'javascript',
@@ -57,3 +53,14 @@ export const items: Item[] = [
     Text: 'No century cut-off',
     Value: 'nocutoff',
   }];
+
+@Injectable()
+export class Service {
+  getEmployees(): Employee[] {
+    return employees;
+  }
+
+  getItems(): Item[] {
+    return items;
+  }
+}

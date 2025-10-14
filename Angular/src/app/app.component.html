@@ -1,3 +1,42 @@
 <div class="default-style">
-  <dx-button [text]="buttonText" (onClick)="onClick($event)"></dx-button>
+  <dx-select-box
+    id="parse-behavior"
+    [items]="items"
+    [width]="300"
+    displayExpr="Text"
+    valueExpr="Value"
+    [(value)]="selectBoxValue"
+  >
+  </dx-select-box>
+  <dx-date-box
+    id="date"
+    [value]="now"
+    type="date"
+    [width]="300"
+    label="Date with the short year"
+    labelMode="outside"
+    [displayFormat]="format"
+  >
+  </dx-date-box>
+  <dx-data-grid
+    id="grid"
+    [dataSource]="employees"
+    [width]="400"
+    keyExpr="ID"
+    [showBorders]="true"
+  >
+    <dxo-data-grid-editing
+      mode="cell"
+      [allowUpdating]="true"
+    ></dxo-data-grid-editing>
+    <dxi-data-grid-column dataField="FirstName"></dxi-data-grid-column>
+    <dxi-data-grid-column dataField="LastName"></dxi-data-grid-column>
+    <dxi-data-grid-column
+      dataField="HireDate"
+      dataType="date"
+      [editorOptions]="editorOptions"
+      [width]="125"
+    >
+    </dxi-data-grid-column>
+  </dx-data-grid>
 </div>
