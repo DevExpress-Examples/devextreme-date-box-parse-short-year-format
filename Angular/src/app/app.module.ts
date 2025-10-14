@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {
-  DxDataGridModule
+  DxDataGridModule,
 } from 'devextreme-angular/ui/data-grid';
 import { DxDateBoxModule } from 'devextreme-angular/ui/date-box';
 import { DxSelectBoxModule } from 'devextreme-angular/ui/select-box';
