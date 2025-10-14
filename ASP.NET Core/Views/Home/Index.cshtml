@@ -11,6 +11,7 @@
     .ID("parse-behavior")
     .ValueExpr("Value")
     .DisplayExpr("Text")
+    .Width(300)
     .DataSource(d => d
         .Mvc()
         .Controller("SampleData")
@@ -22,6 +23,7 @@
 @(Html.DevExtreme().DateBox()
     .Value(DateTime.Now)
     .ID("date")
+    .Width(300)
     .DisplayFormat(new JS("displayFormat"))
     .Type(DateBoxType.Date)
     .Label("Date with the short year")

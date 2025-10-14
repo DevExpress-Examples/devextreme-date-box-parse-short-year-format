@@ -3,23 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Text.Json;
 using ASP_NET_Core.Models;
+using ASP_NET_Core.Utils;
 using DevExtreme.AspNet.Data;
 using DevExtreme.AspNet.Mvc;
 using Microsoft.AspNetCore.Mvc;
-
-namespace ASP_NET_Core.Controllers;
-
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using ASP_NET_Core.Models;
-using DevExtreme.AspNet.Data;
-using DevExtreme.AspNet.Mvc;
-using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
 
 namespace ASP_NET_Core.Controllers {
 
@@ -41,10 +30,9 @@ namespace ASP_NET_Core.Controllers {
         [HttpPut]
         public IActionResult Put(int key, string values)
         {
-
             var item = SampleData.Employees.First(e => e.ID == key);
 
-            JsonConvert.PopulateObject(values, item);
+            item.PopulateFromJson(values);
 
             if (!TryValidateModel(item))
                 return BadRequest(ModelState);
