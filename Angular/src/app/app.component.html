@@ -25,15 +25,18 @@
     keyExpr="ID"
     [showBorders]="true"
   >
-    <dxo-editing mode="cell" [allowUpdating]="true"></dxo-editing>
-    <dxi-column dataField="FirstName"></dxi-column>
-    <dxi-column dataField="LastName"></dxi-column>
-    <dxi-column
+    <dxo-data-grid-editing
+      mode="cell"
+      [allowUpdating]="true"
+    ></dxo-data-grid-editing>
+    <dxi-data-grid-column dataField="FirstName"></dxi-data-grid-column>
+    <dxi-data-grid-column dataField="LastName"></dxi-data-grid-column>
+    <dxi-data-grid-column
       dataField="HireDate"
       dataType="date"
       [editorOptions]="editorOptions"
       [width]="125"
     >
-    </dxi-column>
+    </dxi-data-grid-column>
   </dx-data-grid>
 </div>
