@@ -33,12 +33,13 @@ function App(): JSX.Element {
         width={300}
       />
       <DateBox
-        value={now}
+        defaultValue={now}
         id="date"
         type="date"
         label="Date with the short year"
         labelMode="outside"
         displayFormat={format}
+        width={300}
       />
       <DataGrid
         id="grid"
