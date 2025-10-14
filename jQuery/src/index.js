@@ -18,6 +18,7 @@ $(() => {
       formatter: (val) => formatter(val),
     },
     value: now,
+    width: 300,
   });
 
   $('#grid').dxDataGrid({
