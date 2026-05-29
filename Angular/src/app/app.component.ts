@@ -2,8 +2,12 @@ import { Component } from '@angular/core';
 import type { Format } from 'devextreme/localization';
 import { formatter, parser } from '../utils';
 import { Employee, Item, Service } from './app.service';
+import { DxDataGridModule } from 'devextreme-angular/ui/data-grid';
+import { DxDateBoxModule } from 'devextreme-angular/ui/date-box';
+import { DxSelectBoxModule } from 'devextreme-angular/ui/select-box';
 
 @Component({
+  imports: [DxDataGridModule, DxDateBoxModule, DxSelectBoxModule],
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
